@@ -1,0 +1,23 @@
+####################################################################
+#
+# Python
+#
+####################################################################
+repos:
+- repo: https://github.com/psf/black
+  rev: 23.3.0
+  hooks:
+  - id: black
+    #args: [--line-length=79]
+
+- repo: https://github.com/PyCQA/flake8
+  rev: 6.0.0
+  hooks:
+  - id: flake8
+
+- repo: https://github.com/returntocorp/semgrep
+  rev: 'v1.27.0'
+  hooks:
+  - id: semgrep
+    args: ['--config', 'p/python', '--error', '--skip-unknown-extensions']
+    exclude: "src/app.py"
